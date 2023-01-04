@@ -4,7 +4,7 @@ exports.default = {
     database: {
         host: 'mysql-103169-0.cloudclusters.net',
         user: 'admin',
-        password: 'RC2P8v9q',
+        password: 'papafrita1',
         database: 'wikiredit'
     }
 };
