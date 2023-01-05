@@ -12,15 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-//import nameimage from '../routes/photoRoutes'
-const multer_1 = __importDefault(require("../lib/multer"));
-class PhotoController {
-    nimage(req, res) {
+const database_1 = __importDefault(require("../database"));
+class Usu_postController {
+    todossuspost(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const nameimage = multer_1.default.single('image');
-                console.log(nameimage);
-                res.json("nameimage");
+                const { id } = req.params;
+                const coment_ = yield database_1.default.query('SELECT * FROM posts WHERE id_usuario = ?', [id]);
+                res.json(coment_);
             }
             catch (e) {
                 res.json({ text: e.name + e.message });
@@ -28,5 +27,5 @@ class PhotoController {
         });
     }
 }
-const photoController = new PhotoController();
-exports.default = photoController;
+const usu_postController = new Usu_postController();
+exports.default = usu_postController;
