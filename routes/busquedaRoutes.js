@@ -11,7 +11,7 @@ class BusquedaRouter {
         this.config();
     }
     config() {
-        this.router.get('/', busquedaController_1.default.barradebusqueda);
+        this.router.post('/', busquedaController_1.default.barradebusqueda);
     }
 }
 const busquedaRouter = new BusquedaRouter();
