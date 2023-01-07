@@ -4,15 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const busquedaController_1 = __importDefault(require("../controllers/busquedaController"));
-class BusquedaRouter {
+const likesController_1 = __importDefault(require("../controllers/likesController"));
+class LikesRoutes {
     constructor() {
         this.router = (0, express_1.Router)();
         this.config();
     }
     config() {
-        this.router.post('/', busquedaController_1.default.barradebusqueda);
+        this.router.post('/:id', likesController_1.default.likke);
     }
 }
-const busquedaRouter = new BusquedaRouter();
-exports.default = busquedaRouter.router;
+const likesRoutes = new LikesRoutes();
+exports.default = likesRoutes.router;
